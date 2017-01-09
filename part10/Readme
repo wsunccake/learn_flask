@@ -1,0 +1,13 @@
+Goal:
+
+	抽離 hard code
+
+
+Step:
+
+	1. config.py
+
+	2. ipython
+	Linux:~ # ipython
+	> from app import app
+	> print(app.config)

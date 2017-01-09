@@ -1,0 +1,21 @@
+Goal:
+
+	使用 SQLAchemy 做 ORM
+
+
+Step:
+
+	1. 安裝 flask sqlalchemy
+	Linux:~/project # pip install Flask-SQLAlchemy
+
+	2. model.py, app.py, db_create.py
+
+
+	3. create databae
+	Linux:~/project # python create_db.py
+	Linux:~/project #ls posts.db
+
+	4. check database
+	Linux:~/project # ipython
+	> from models import BlogPost
+	> posts = BlogPost.query.all()

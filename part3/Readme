@@ -1,0 +1,31 @@
+Goal:
+
+	驗證使用登入
+
+Step:
+
+	1. app.py
+	使用自定義的 decorator 做驗證
+
+	def login_required(f)
+	-> f 把 function 當 vairable 帶入使用
+
+	if 'logged_in' in session
+	-> session
+
+	def login_required(f):
+    	def wrap(*args, **kwargs):
+    	...
+    	return wrap
+    -> 一般 decorator 的寫法
+
+    flash('You had log in now!')
+    -> 將訊息傳入 template (template 也要設定)
+
+    session.pop('logged_in', None)
+    -> 刪除 session 內定義的 logged_in
+
+    2. templates/*.html
+    get_flashed_messages()
+    -> 讀取 flash 的內容
+

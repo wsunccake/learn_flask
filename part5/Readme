@@ -1,0 +1,19 @@
+Goal:
+
+	使用  DB
+
+
+Step:
+
+	1. sql.py
+
+
+	2. 產生 db
+	Linux:~/project # pythin sql.py
+
+	3. app.py
+
+	g.db
+	<- 使用 flask 定義全域變數
+
+	

@@ -1,0 +1,21 @@
+Goal:
+
+	重構 template/*.html, 因為有重複的部分可以抽出來
+
+
+Step:
+	1. base.html
+	整理出 index.html, login.html, web.html 重複的 code
+
+	{% block content%}{% endblock %}
+	-> index.html, login.html, web.html 不同處會在此處顯示
+
+
+	2. index.html, login.html, web.html
+	{% extends "base.html" %}
+	-> 載入 base.html
+
+	{% block content%}
+	...
+	{% endblock %}
+	->  填入該網頁改變的內容

@@ -1,0 +1,34 @@
+Goal:
+
+	Deploy flask to Heroku
+
+
+Step:
+
+	1. 安裝 heroku cli tool
+	Linux:~ # install heroku-toolbelt
+
+	2. pip 設定
+	Linux:~/project # pip install Flask gunicorn
+	Linux:~/project # pip freeze > requirements.txt
+
+	3. gunicorn 測試
+	Linux:~/project # gunicorn -b 127.0.0.1:4000 app:app
+	Linux:~/project # vi Procfile
+	web: gunicorn app:app
+
+	4. git 設定
+	Linux:~/project # vi .gitignore
+	.idea
+	*.iml
+	*.db
+	*.pyc
+	Linux:~/project # git init
+	Linux:~/project # git add .
+	Linux:~/project # git commit -m "init"
+
+	5. 上傳 project 到 heroku
+	Linux:~/project # heroku login
+	Linux:~/project # heroku local
+	Linux:~/project # heroku create
+	Linux:~/project # git push heroku master

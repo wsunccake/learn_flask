@@ -26,17 +26,20 @@ def login_required(f):
 @app.route('/')
 @login_required
 def home():
-    g.db = connect_db()
-    cur = g.db.execute('SELECT * FROM posts;')
-
-    post_dict = {}
     posts = []
-    for row in cur:
-        post_dict['title'] = row[0]
-        post_dict['description'] = row[1]
-        posts.append(post_dict)
 
-    g.db.close()
+    try:
+        g.db = connect_db()
+        cur = g.db.execute('SELECT * FROM posts;')
+
+        for row in cur.fetchall():
+            posts.append(dict(title=row[0],description=row[1]))
+
+        g.db.close()
+        
+    except sqlite3.OperationalError:
+        flash('You have no database.')
+
     return render_template('index.html', posts=posts)
 
 
@@ -65,6 +68,7 @@ def logout():
     session.pop('logged_in', None)
     flash('You had log out now!')
     return redirect(url_for('welcome'))
+
 
 def connect_db():
     return sqlite3.connect(app.database)

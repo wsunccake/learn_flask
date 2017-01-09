@@ -1,0 +1,36 @@
+Goal:
+
+	使用 Flask 架簡易的 Web Server 並顯示 Hello World
+
+
+Stelp:
+
+	1. 安裝 Flask
+	flask 為 python web framework, 使用前須先安裝
+	Linux:~ # pip install flask
+
+	2. app.py
+	在 project 中建立 .py (任何檔名皆可, 這裡以 app.py)
+	Linux:~/project # vi app.py
+
+	@app.route('/')
+	-> @ 是 decorator
+	-> 設定連線的 url
+
+	render_template
+	-> 使用 template 產生網頁
+
+	app.run(debug=True, host='0.0.0.0')
+	-> debug=True 開啟 debug mode, 當執行有問題時, 會直接在 web page 顯示
+	-> host='0.0.0.0'
+
+
+	3. template
+	在 project/templates 中建立 .html (注意檔名需和 app.py 裡面定義一樣)
+	Linux:~/project/templates # vi welcome.html
+
+	4. 執行 app.py
+	Linux:~/project # python app.py
+
+	5. 開啟網頁
+	使用 browser 開啟 127.0.0.1:5000

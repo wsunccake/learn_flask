@@ -1,0 +1,14 @@
+Goal:
+
+	change secret key
+
+
+Step:
+
+	1. ipython
+	Linux:~ # ipython
+	> import os
+	> os.urandom(24)
+
+	2. config.py
+	把剛剛得到值用於修改 SECRET_KEY

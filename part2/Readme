@@ -1,0 +1,23 @@
+Goal:
+
+	建立 auth page 去登入網頁
+
+
+Step:
+
+	1. app.py
+
+	@app.route('/login', methods=['GET', 'POST'])
+	-> /login receive get and post http methods (default: get)
+
+	request.form['username']
+	-> read data from form's name=username
+
+	url_for('home')
+	-> redirect to home (python function)
+
+	2. templates/login.html
+	使用 jinja2 的語法, {%%} 或 {{}} 來處理從 function 來的資料 (在此為 def login 所定義到的變數)
+
+	-> {%%} 為一般流程控制使用
+	-> {{}} 只是讀取變數
